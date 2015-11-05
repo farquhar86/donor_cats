@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'charities/index'
+
   root 'welcome#index'
   resources :users
   resources :charities

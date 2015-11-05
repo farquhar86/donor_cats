@@ -1,0 +1,19 @@
+<div class="container">
+
+
+	<%= form_for @user do |form| %>
+	  
+	 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control title_input_field2" %>
+
+	    <%= form.text_field :last_name, placeholder: "Last Name", class: "form-control title_input_field2" %> 
+
+	    <%= form.text_field :city, placeholder: "Planet of Residence", class: "form-control title_input_field2" %> 
+	  
+	    <%= form.email_field :email, placeholder: "Email Address", class: "form-control title_input_field2" %> 
+	  
+	    <%= form.password_field :password, placeholder: "Password", class: "form-control title_input_field2" %><br>
+
+	  <%= form.submit "Sign Up!", class: "btn btn-default btn-lg" %>
+	<% end %>
+</div>	
+

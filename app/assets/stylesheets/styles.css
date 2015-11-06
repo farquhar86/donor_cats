@@ -1,0 +1,21 @@
+.navbar_image {
+	height: 50px;
+	margin-top: -15px;
+	border-radius: 25%;
+}
+
+#signup_form .error {
+	color: red;
+}
+
+#login_form .error {
+	color: red;
+}
+
+#logout_button {
+	margin-left: 10px;
+}
+
+#login_button {
+	margin-left: 10px;
+}

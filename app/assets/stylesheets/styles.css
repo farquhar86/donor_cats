@@ -1,0 +1,15 @@
+#signup_form .error {
+	color: red;
+}
+
+#login_form .error {
+	color: red;
+}
+
+#logout_button {
+	margin-left: 10px;
+}
+
+#login_button {
+	margin-left: 10px;
+}

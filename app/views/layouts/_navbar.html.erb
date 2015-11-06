@@ -19,10 +19,10 @@
 				<li><a href="#">About</a></li>
 			</ul>
 			<% if logged_in? %>
-				<a class="btn navbar-btn navbar-right btn-warning" href="/logout">Log out</a>
+				<a class="btn navbar-btn navbar-right btn-warning" href="/logout" id="logout_button">Log out</a>
 				<p class="navbar-text navbar-right">Welcome, <%= current_user.first_name %></p>
 			<% else %>
-				<a class="btn navbar-btn navbar-right btn-default" href="/login">Login</a>
+				<a class="btn navbar-btn navbar-right btn-default" href="/login" id="login_button">Login</a>
 				<a class="btn navbar-btn navbar-right btn-primary" href="/signup">Sign Up</a>
 			<% end %>
 		</div>

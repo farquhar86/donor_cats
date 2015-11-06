@@ -2,14 +2,21 @@
 <html>
 <head>
 
-	<title>DonorCats</title>
+	<title>Donor Cats</title>
 
 	<%= stylesheet_link_tag 'application', media: 'all' %>
 
 	<%= csrf_meta_tags %>
-	
+
 </head>
 <body>
+
+	<!-- Flash Messages -->
+	<div class="container text-center">
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-info'}" %>
+		<% end %>
+	</div>
 
 	<%= yield %>
 

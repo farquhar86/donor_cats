@@ -1,3 +1,9 @@
+.navbar_image {
+	height: 50px;
+	margin-top: -15px;
+	border-radius: 25%;
+}
+
 #signup_form .error {
 	color: red;
 }

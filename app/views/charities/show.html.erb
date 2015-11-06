@@ -9,11 +9,14 @@
 		<h3><%= @charity.city %></h3>
 		<h3><%= @charity.state %></h3>
 		<p><%= @charity.discription %></p>
-		<%= form_for @charity, url: signup_path, method: "get" do |f| %>
-			<%= f.hidden_field :data, :value => @charity %>
+		
+		<%= form_tag("/signup", method: "get") do %>
+			<%= hidden_field :id, :value => @charity.id %>
 
-			<%= f.submit "Donate", :class => 'submit_button btn btn-default' %>
+			<%= submit_tag "Donate", :class => 'submit_button btn btn-default' %>
         <% end %> 
+
+   
 		
 	</div>	
 </div>	

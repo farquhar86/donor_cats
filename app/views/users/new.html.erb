@@ -1,19 +1,31 @@
-<div class="container">
-
-
-	<%= form_for @user do |form| %>
-	  
-	 	<%= form.text_field :first_name, placeholder: "First Name", class: "form-control title_input_field2" %>
-
-	    <%= form.text_field :last_name, placeholder: "Last Name", class: "form-control title_input_field2" %> 
-
-	    <%= form.text_field :city, placeholder: "Planet of Residence", class: "form-control title_input_field2" %> 
-	  
-	    <%= form.email_field :email, placeholder: "Email Address", class: "form-control title_input_field2" %> 
-	  
-	    <%= form.password_field :password, placeholder: "Password", class: "form-control title_input_field2" %><br>
-
-	  <%= form.submit "Sign Up!", class: "btn btn-default btn-lg" %>
-	<% end %>
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<hr>
+		<%= form_for @user, :html => { :multipart => true, :id => "signup_form" } do |f| %>
+			<div class="form-group">
+				<label for="user_first_name">First Name</label>
+				<%= f.text_field :first_name, placeholder: "First Name", class: "form-control title_input_field2" %>
+			</div>
+			<div class="form-group">
+				<label for="user_last_name">Last Name</label>
+				<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control title_input_field2" %> 
+			</div>
+			<div class="form-group">
+				<label for="user_city">City of Residence</label>
+				<%= f.text_field :city, placeholder: "City of Residence", class: "form-control title_input_field2" %>
+			</div>
+			<div class="form-group">
+				<label for="user_email">Email</label>
+			<%= f.email_field :email, placeholder: "Email", class: "form-control title_input_field2" %> 
+			</div>
+			<div class="form-group">
+				<label for="user_password">Password</label>
+				<%= f.password_field :password, placeholder: "Password", class: "form-control title_input_field2" %>
+			</div>
+			<%= f.submit "Sign Up!", class: "btn btn-default btn-lg" %>
+		<% end %>
+		<br>
+		<p>Already have an account? <%= link_to "Click here", login_path %> to login</p>
+	</div>
 </div>	
 

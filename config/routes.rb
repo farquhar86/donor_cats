@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'charities/index'
 
   root 'welcome#index'
   resources :users

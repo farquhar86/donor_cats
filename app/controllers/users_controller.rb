@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    render :new
+   
+    # @charity_id = params[:charity][:id]
+   
   end
 
   def create

@@ -9,6 +9,11 @@
 		<h3><%= @charity.city %></h3>
 		<h3><%= @charity.state %></h3>
 		<p><%= @charity.discription %></p>
-		<%= button_to "Donate", new_user_path, class: "btn btn-default btn-lg", :method => :get %>
+		<%= form_tag @charity, url: new_user_path, method: "get" do |f| %>
+			<%= f.hidden_field :data, :value => @charity %>
+
+			<%= f.submit "Donate", :class => 'submit_button btn btn-default' %>
+        <% end %> 
+		
 	</div>	
 </div>	

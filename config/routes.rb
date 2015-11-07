@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-
 	root 'welcome#index'
 
 	resources :users, only: [:create]
 	get "/signup", to: "users#new", as: :signup
 	get "/profile", to: "users#show", as: :profile
 
-	resources :charities
-
 	resources :sessions, only: [:create]
 	get "/login", to: "sessions#new", as: :login
 	get "/logout", to: "sessions#destroy", as: :logout
+
+	resources :charities
+	resources :donations, only: [:new, :create, :show]
 
 end
 

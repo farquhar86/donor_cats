@@ -4,6 +4,11 @@
 	border-radius: 25%;
 }
 
+.profile_pic {
+	height: 100px;
+	border-radius: 25%;
+}
+
 #signup_form .error {
 	color: red;
 }
@@ -18,4 +23,8 @@
 
 #login_button {
 	margin-left: 10px;
+}
+
+#profile_jumbo {
+	background-color: orange;
 }

@@ -10,13 +10,19 @@
 		<h3><%= @charity.city %></h3>
 		<h3><%= @charity.state %></h3>
 		<p><%= @charity.discription %></p>
-		
-		<%= form_tag("/signup", method: "get") do %>
-			<%= hidden_field :id, :value => @charity.id %>
+		<div class="row">
+			<div class="col-sm-1">
+				<%= link_to "Back", charities_path, :class => 'submit_button btn btn-default' %>
+			</div>
+			<div class='col-sm-1'>
+				<%= form_tag("/signup", method: "get") do %>
+					<%= hidden_field :id, :value => @charity.id %>
 
-			<%= submit_tag "Donate", :class => 'submit_button btn btn-default' %>
-        <% end %> 
-
+					<%= submit_tag "Donate", :class => 'submit_button btn btn-default' %>
+		        <% end %> 
+	    	</div>
+	    	
+    	</div>
    
 		
 	</div>	

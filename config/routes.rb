@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+
+
 	root 'welcome#index'
 
 	resources :users, only: [:create]
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
 	get "/profile", to: "users#show", as: :profile
 
 	resources :charities
+  resources :donations
+
 
 	resources :sessions, only: [:create]
 	get "/login", to: "sessions#new", as: :login

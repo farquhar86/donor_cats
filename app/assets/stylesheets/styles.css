@@ -1,12 +1,33 @@
+.navbar {
+	border-bottom: solid;
+	border-bottom-color: orange;
+}
+
+#navbar_title {
+	color: orange;
+}
+
 .navbar_image {
 	height: 50px;
 	margin-top: -15px;
 	border-radius: 25%;
 }
 
+.green {
+	color: green;
+}
+
+h1.green {
+	color: green;
+}
+
+.profile_title {
+	color: gray;
+}
+
 .profile_pic {
-	height: 100px;
-	border-radius: 25%;
+	height: 180px;
+	border-radius: 100%;
 }
 
 #signup_form .error {

@@ -1,6 +1,6 @@
 
 <%= render "layouts/navbar" %>
-<%= form_for @donation do |form| %>
+<%= form_for(@donation) do |form| %>
 	<div class="container">
 		<div class="col-sm-8">
             <div class="panel panel-default">
@@ -33,7 +33,6 @@
                     <h3 class="panel-title">Payment Details</h3> <!-- <img class="pull-right" src="http://i76.imgup.net/accepted_c22e0.png"> -->
                 </div>
                 <div class="panel-body">
-                    <form role="form" id="payment-form">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
@@ -75,7 +74,6 @@
                                 <p class="payment-errors"></p>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

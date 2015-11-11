@@ -9,12 +9,16 @@ Rails.application.routes.draw do
 
 	resources :charities
   get '/:name/donations/new', to:"donations#new", as: :make_donation
-  post '/donations', to:"donations#create"
+  post '/:name/donations/', to:"donations#create", as: :donations
+  get '/:name/donations/:id', to:"donations#show", as: :donation_show
+
+  # post '/donations', to:"donations#create", as: :create_donation
+
 	resources :sessions, only: [:create]
 	get "/login", to: "sessions#new", as: :login
 	get "/logout", to: "sessions#destroy", as: :logout
 
-	resources :donations, only: [:new, :create, :show]
+	# resources :donations, only: [:new, :create, :show]
 
 end
 

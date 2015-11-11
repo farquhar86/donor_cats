@@ -4,12 +4,12 @@ class DonationsController < ApplicationController
   	
 
   end
-    def create
-        donation_params = params.require(:donation).permit(:amount)
-        byebug
-	    @donation = Donation.new(user_params)
+  def create
+      donation_params = params.require(:donation).permit(:amount)
+	    @donation = Donation.new(donation_params)
 	    @donation.save
-	    redirect_to root_path
+      byebug
+	    redirect_to donation_show_path(@donation)
 	    
 	end
 end

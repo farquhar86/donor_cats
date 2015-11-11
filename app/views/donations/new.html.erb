@@ -12,10 +12,10 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <%= form.text_field :amount, placeholder: "First Name", class: "form-control", placeholder: "One Time Donation Amount"%>
+                                    <%= form.text_field :amount, class: "form-control", placeholder: "One Time Donation Amount"%>
                                     
                                    <br>
-                                    <input placeholder="Monthly Donation Amount" class="form-control"></input> 
+                                    <%= form.text_field :monthly_amount, class: "form-control", placeholder: "Monthly Donation Amount"%>
                                 </div>                            
                             </div>
                         </div>

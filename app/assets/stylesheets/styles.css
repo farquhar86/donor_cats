@@ -22,10 +22,9 @@ h1.green {
 }
 
 .profile_title {
-	color: gray;
-	margin-bottom: 50px;
-	margin-top: 50px;
-
+    color: gray;
+    margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 .profile_pic {

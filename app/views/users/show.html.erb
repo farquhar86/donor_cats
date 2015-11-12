@@ -6,7 +6,7 @@
 				<%= image_tag("profile.jpg", alt: "Cool Kangaroo", class: "profile_pic") %>
 			</div>
 			<div class="col-lg-6">
-				<h2><%= @user.full_name %></h2>
+				<h2><%= @user.full_name %><%= image_tag "achieve.png", :class=>"achieve" %></h2>
 				<p>Member since <%= @user.created_at.strftime("%D") %></p>
 				<br>
 				<p>Currently donating <span class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></span> per month</p>
@@ -47,9 +47,9 @@
 					<div class="charity-donated text-center">
 					<%= image_tag src="Red_cross.png", :class => "charity-img"%> <h2> American Red Cross</h2>
 					</div>
-<!-- 				<div class="row text-center">
-					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button>
-				</div> -->
+				<div class="row text-center">
+<!-- 					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button> -->
+				</div>
 			</div>
 		</div>
 	</div>

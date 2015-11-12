@@ -1,0 +1,32 @@
+
+label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+
+.center-block {
+    margin-left: 15%;
+}
+
+.veritcal-line {
+	 border-right: medium solid #979797;
+	 height: 100vh;
+}
+
+.red {
+	height: 150px;
+	width: 225px;
+}
+
+.news-feed{
+    margin-bottom: 50px;
+}
+

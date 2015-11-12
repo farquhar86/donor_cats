@@ -1,5 +1,6 @@
 body {
 	font-family: helvetica-bold;
+	background-color: #fef7e7;
 }
 .center {
 	 text-align: center;
@@ -31,7 +32,7 @@ body {
 	background-color: rgba(255, 160, 59, 0.83);
 	height: 600px;
 	width: 100vw;
-	margin-top: -17px;
+	margin-top: -19px;
 	border-bottom: solid;
   border-bottom-color: #ff6b3b;
 }

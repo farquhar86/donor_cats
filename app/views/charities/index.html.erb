@@ -7,14 +7,14 @@
 <div class="mid-bar"></div>
 <div class="container">
 	<% @charities.each do |c| %>
-	    <div class="row">
-		    <div class="col-sm-4">
-			   <div class="thumbnail text-center">
-		            <img class="img-box" src="<%= c.image %>">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="thumbnail text-center">
+		    	<img class="img-box" src="<%= c.image %>">
 					<div class="details text-center">
 						<div class="secondary"><%= c.causes %></div> 
-					</div> <!-- details -->
-				</div> <!-- box -->
+					</div>
+				</div>
 			</div>
 			<div class="col-sm-6 ">
 				<h3 id="name-link"><%= link_to c.name, c %></h3>

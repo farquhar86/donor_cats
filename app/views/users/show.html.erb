@@ -1,47 +1,65 @@
 <%= render "layouts/navbar" %>
+<div class="top-rectangle-user">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 profile_pic">
+				<%= image_tag("profile.jpg", alt: "Cool Kangaroo", class: "profile_pic") %>
+			</div>
+			<div class="col-lg-6">
+				<h2><%= @user.full_name %></h2>
+				<p>Member since <%= @user.created_at.strftime("%D") %></p>
+				<br>
+				<p>Currently donating <span class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></span> per month</p>
+				<br>
+				<% @user.donations.each do |d| %>
+					<p>Next donation: $<%= d.monthly_amount %> on <%= (d.created_at + 1.month).strftime("%D") %></p>
+				<% end %>
+				<p>Next Donation December 8, 2015</p>
+			</div>
+			<div class="col-lg-3 text-center">
+				<h1 class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.amount} + @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></h1>
+					<!-- Needs some kind of * (Time.now - @user.donations.created_at.to_time)/1.month).round -->
+				<h4>Donated so far!</h4>
+					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button>
+			</div>			
+		</div>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
-		<div class="jumbotron" id="profile_jumbo">
+		<div class="col-lg-6">
+			<div class="text-center">
+				<h3 class="profile_title">News Feed</h3>
+			</div>
 			<div class="row">
-				<div class="col-lg-3 text-center">
-					<%= image_tag("profile.jpg", alt: "Cool Kangaroo", class: "profile_pic") %>
+				<div class="col-md-5"><%= image_tag src="red.jpg", :class=>"red" %>
 				</div>
-				<div class="col-lg-6">
-					<h2><%= @user.full_name %></h2>
-					<p>Member since <%= @user.created_at.strftime("%D") %></p>
-					<br>
-					<p>Currently donating <span class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></span> per month</p>
-					<br>
-
-					<% @user.donations.each do |d| %>
-						<p>Next donation: $<%= d.monthly_amount %> on <%= (d.created_at + 1.month).strftime("%D") %></p>
-					<% end %>
+				<div class="col-md-7">
+				<p>This post was written in September 2015 by Niki Clark, a member of the American Red Cross’s international communications team who was deployed to Nepal following the 7.8 magnitude earthquake that struck the country in April. I am boarding a plane to Tacloban—a city on the island of Leyte, in the Philippines. </p>
+				</div>				
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="row">
+				<div class="text-center">
+					<h3 class="profile_title">Your Charities</h3>
 				</div>
-				<div class="col-lg-3 text-center">
-					<h1 class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.amount} + @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></h1>
-						<!-- Needs some kind of * (Time.now - @user.donations.created_at.to_time)/1.month).round -->
-					<h4>Donated so far!</h4>
-				</div>
+					<div class="charity-donated text-center">
+					<%= image_tag src="Red_cross.png", :class => "charity-img"%> <h2> American Red Cross</h2>
+					</div>
+<!-- 				<div class="row text-center">
+					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button>
+				</div> -->
 			</div>
 		</div>
 	</div>
-	<hr>
-	<div class="row">
-		<div class="text-center">
-			<h3>Your selected charities</h3>
-		</div>
-		<ul id="profile_charities">
-			<% @user.donations.each do |c| %>
-				<li>Charity ID: <%= c.charity_id %> [name coming]</li>
-			<% end %>
-		</ul>
-	</div>
-	<hr>
-	<div class="row text-center">
-		<a class="btn btn-success" href="/charities">Find More Charities!</a>
-	</div>
-	<hr>
-	<div class="row">
+</div>
+
+
+
+
+
+<!-- 	<div class="row">
 		<div class="col-lg-6">
 			<h2 class="profile_title">News Feed</h2>
 			<% @user.donations.each do |d| %>
@@ -68,5 +86,4 @@
 				</div>
 			<% end %>
 		</div>
-	</div>
-</div>
+	</div> -->

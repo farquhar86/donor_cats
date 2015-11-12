@@ -15,11 +15,14 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="#">Charties</a></li>
-				<li><a href="#">About</a></li>
+				<li><%= link_to "Charties", charities_path, :method => :get %></li>
+				<!-- <li><a href="#">About</a></li> -->
 			</ul>
+
 			<% if logged_in? %>
+				<!-- <a><%= link_to "Profile", profile_path, :method => :get %></a> -->
 				<a class="btn navbar-btn navbar-right btn-warning" href="/logout" id="logout_button">Log out</a>
+				<p class="navbar-text navbar-right"><%= link_to "Profile", profile_path, :method => :get %></p>
 				<p class="navbar-text navbar-right">Welcome, <%= current_user.first_name.capitalize %></p>
 			<% else %>
 				<a class="btn navbar-btn navbar-right btn-default" href="/login" id="login_button">Login</a>

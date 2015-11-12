@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
 
 	resources :charities
-  get '/:name/donations/new', to:"donations#new", as: :make_donation
-  post '/:name/donations/', to:"donations#create", as: :donations
+  get '/:id/donations/new', to:"donations#new", as: :make_donation
+  post '/:id/donations/', to:"donations#create", as: :donations
   get '/donations/:id', to:"donations#show", as: :donation_show
 
   # post '/donations', to:"donations#create", as: :create_donation

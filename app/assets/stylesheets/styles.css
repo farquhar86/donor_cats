@@ -49,3 +49,8 @@ h1.green {
 #profile_jumbo {
 	background-color: orange;
 }
+
+#profile_charities li {
+	display: inline;
+	padding-right: 100px;
+}

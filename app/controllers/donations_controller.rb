@@ -1,7 +1,11 @@
 class DonationsController < ApplicationController
   def new
   	@donation = Donation.new
+    @charity = Charity.find_by({id: params[:id]})
+
   end
+
+  	
 
   def create
       if logged_in? == false
@@ -16,6 +20,6 @@ class DonationsController < ApplicationController
 
   private
     def donation_params
-      params.require(:donation).permit(:amount, :monthly_amount)
+      params.require(:donation).permit(:amount, :monthly_amount, :carity_id)
     end
 end

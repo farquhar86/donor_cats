@@ -65,6 +65,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
+                                 <%= form.hidden_field :charity_id, :value => @charity.id %>
                                 
                                 <%= form.submit "Send Donation", class: "submit_button btn btn-success btn-lg btn-block" %>
                               

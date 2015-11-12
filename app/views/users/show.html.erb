@@ -34,25 +34,36 @@
 			<div class="row">
 				<div class="col-md-5"><%= image_tag src="red.jpg", :class=>"red" %>
 				</div>
-				<div class="col-md-7">
-				<p>This post was written in September 2015 by Niki Clark, a member of the American Red Cross’s international communications team who was deployed to Nepal following the 7.8 magnitude earthquake that struck the country in April. I am boarding a plane to Tacloban—a city on the island of Leyte, in the Philippines. </p>
+				<div class="col-md-7 padding-top">
+				<h4>Latest Update</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><hr>
+				</div>
+				<div class="col-md-5"><%= image_tag src="newproject.jpg", :class=>"red" %>
+				</div>
+				<div class="col-md-7 padding-top">
+				<h4>New Project</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p><hr>
+				</div>	
+				<div class="col-md-5"><%= image_tag src="upevents.jpg", :class=>"red" %>
+				</div>
+				<div class="col-md-7 padding-top">
+				<h4>Upcoming Events</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p><hr>
 				</div>				
 			</div>
-			<% end %>
 		</div>
 		<div class="col-lg-6">
 			<div class="row">
 				<div class="text-center">
 					<h3 class="profile_title">Your Charities</h3>
 				</div>
-					<% @user.donations.reverse.each do |d| %>
 					<div class="charity-donated text-center">
 					<%= image_tag src="Red_cross.png", :class => "charity-img"%> <h2> American Red Cross</h2>
 					</div>
 					<% end %>
-<!-- 				<div class="row text-center">
+				<div class="row text-center">
 					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	</div>

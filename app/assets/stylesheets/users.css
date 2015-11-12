@@ -51,3 +51,7 @@
 	height: 40px;
 }
 
+.col-md-7.padding-top {
+    margin-top: -5px;
+}
+

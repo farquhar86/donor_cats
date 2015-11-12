@@ -2,7 +2,7 @@
 <%= render "layouts/navbar" %>
 <%= form_for(@donation) do |form| %>
 	<div class="container">
-		<div class="col-sm-8">
+		<div class="col-sm-8 center-block">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Donation Amount to  <%= @charity.name %></h3>
@@ -23,11 +23,7 @@
                 </div>    
             </div>
         </div>
-        
-        
-        
-        
-        <div class="col-sm-8">
+        <div class="col-sm-8 center-block">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Payment Details</h3> <!-- <img class="pull-right" src="http://i76.imgup.net/accepted_c22e0.png"> -->
@@ -45,12 +41,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            
                                 <div class="col-sm-4">
                                 <label>EXPIRATION</label>
                                     <input type="text" class="form-control" name="expMonth" placeholder="MM">
                                 </div>
-                               
                                 <div class="col-sm-4">
                                 	<label>EXPIRATION</label>
                                     <input type="text" class="form-control" name="expYear" placeholder="YY">
@@ -61,15 +55,12 @@
                                     <input type="password" class="form-control" name="cvCode" placeholder="CV">
                                 </div>
                             </div>
-                           
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
                                  <%= form.hidden_field :charity_id, :value => @charity.id %>
                                 
                                 <%= form.submit "Send Donation", class: "submit_button btn btn-success btn-lg btn-block" %>
-                              
-                                
                             </div>
                         </div>
                         <div class="row" style="display:none;">
@@ -80,8 +71,6 @@
                 </div>
             </div>
         </div>
-
-
-	</div>	
+	</div>
 <% end%>
 

@@ -1,26 +1,26 @@
 <%= render "layouts/navbar" %>
-
 <div class="container">
-	<div class="row">
-		<img src="<%= @charity.image %>">
-	</div>
-	<div class='row'>
-		<h1><%= @charity.name %></h1>
-		<p><%= @charity.discription %></p>
+<img class="charity-bg" src="<%= @charity.image %>">
+<div class="bot-show-bar"></div>
+</div>
+<div class="container">
 		<div class="row">
-			<div class="col-sm-1">
-				<%= link_to "Back", charities_path, :class => 'submit_button btn btn-default' %>
+			<div class="col-sm-8">
+					<h1><%= @charity.name %></h1>
+		<p><%= @charity.discription %></p>
+				<%= link_to "Back", charities_path, :class => 'back-button btn btn-primary' %>
 			</div>
-			<div class='col-sm-1'>
+			<div class='col-sm-2'>
 				<%= form_tag("/signup", method: "get") do %>
 					<%= hidden_field :id, :value => @charity.id %>
-
-					<%= submit_tag "Donate", :class => 'submit_button btn btn-default' %>
+					<%= submit_tag "Donate", :class => 'donate_button btn btn-primary' %>
 		        <% end %> 
+		  	<div class="map">
+        	<div data-latitude="15.7833" data-longitude="10.8667" data-zoom="2" id="map-canvas" class="map-canvas"></div>    
 	    	</div>
-	    	
     	</div>
-   
-		
-	</div>	
-</div>	
+</div>
+</div>
+<div class="bot-top-bar"></div>
+<div class="bot-bar"></div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>

@@ -11,19 +11,18 @@
 		</div>
 		<a class="navbar-brand" id="navbar_title" href="/">KarmaRoo</a>
 		<div class="collapse navbar-collapse" id="navbar-collapse">
-
 			<% if logged_in? %>
-
 				<a class="btn navbar-btn navbar-right btn-warning" href="/logout" id="logout_button">Log out</a>
 				<a class="btn navbar-btn navbar-right btn-warning" href="/profile" id="logout_button">Profile</a>
-				
 				<p class="navbar-text navbar-right">Welcome, <%= current_user.first_name.capitalize %></p>
 			<% else %>
 				<a class="btn navbar-btn navbar-right btn-primary" href="/signup">Sign Up</a>
 				<a class="btn navbar-btn navbar-right btn-default" href="/login" id="login_button">Login</a>
 			<% end %>
+			<ul class="nav navbar-nav pull-right">
 				<li><%= link_to "Charities", charities_path%></li>
-
+				<li><%= link_to "About", about_path%></li>
+			</ul>
 			</ul>
 		</div>			
 	</div>

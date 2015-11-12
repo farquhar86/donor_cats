@@ -1,0 +1,49 @@
+.top-rectangle-user {
+	background-color: rgba(255, 160, 59, 0.83);
+	height: 200px;
+	width: 100vw;
+	margin-top: -19px;
+	border-bottom: solid;
+  border-bottom-color: #ff6b3b;
+}
+
+.new-charity-btn {
+	color: #ffffff;
+	background-color: #6caa11;
+	border: #6caa11;
+	border-radius: 0px;
+  width: 120px;
+  height: 50px;
+  margin-top: 35px;
+}
+
+.find-charity-btn {
+	color: #ffffff;
+	background-color: #6caa11;
+	border: #6caa11;
+	border-radius: 0px;
+  width: 120px;
+  height: 50px;
+  margin-top: 35px;
+  text-decoration: none;
+}
+
+.find-charity-btn a {
+	color: white;
+}
+
+.find-charity-btn a:hover {
+	text-decoration: none;
+}
+
+.charity-img {
+	width: 100px;
+	height: 75px;
+}
+.charity-donated {
+	display: flex;
+	text-align: center;
+	padding-top: 5px;
+	padding-left: 65px;
+
+}

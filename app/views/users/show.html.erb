@@ -54,7 +54,7 @@
 			</div>
 			<% @user.donations.reverse.each do |d| %>
 				<div class="panel panel-success">
-					<div class="panel-heading">[Charity Name/Picture]</div>
+					<div class="panel-heading">Charity's ID: <%= d.charity_id %> [name coming]</div>
 					<div class="panel-body">
 						<p><%= d.created_at.strftime("%D") %> at <%= d.created_at.strftime("%H:%m") %>, you donated:</p>
 						<ul>

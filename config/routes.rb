@@ -2,15 +2,17 @@ Rails.application.routes.draw do
 
 	root 'welcome#index'
 
+	get "/about", to: "welcome#show", as: :about
+
 	resources :users, only: [:create]
 	get "/signup", to: "users#new", as: :signup
 	get "/profile", to: "users#show", as: :profile
 
 
 	resources :charities
-  get '/:name/donations/new', to:"donations#new", as: :make_donation
-  post '/:name/donations/', to:"donations#create", as: :donations
-  get '/donations/:id', to:"donations#show", as: :donation_show
+	get '/:id/donations/new', to:"donations#new", as: :make_donation
+	post '/:id/donations/', to:"donations#create", as: :donations
+	get '/donations/:id', to:"donations#show", as: :donation_show
 
   # post '/donations', to:"donations#create", as: :create_donation
 

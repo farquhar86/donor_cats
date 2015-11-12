@@ -8,8 +8,9 @@
         </div>
         <div class="col-md-4 text-right">
           <p> Donate to charities you care about and track the impact of every dollar.</p>
-          <button class="btn btn-primary">View Charities</button><br>
-          <a href="#"> or become a participating charity </a>
+        
+          <%= link_to "View Charities", charities_path, class: "btn btn-primary" %><br>
+          <a> or become a participating charity</a>
         </div>
       </div>
     </div>
@@ -43,9 +44,8 @@
       </div>
     </div>
     <div class="bottom-links">
-    <a href="#"> Donate </a>
-    <a href="#"> Contact Us </a>
-    <a href="#"> About Us </a>    
+      <a href="/charities"> Charities </a>
+      <a href="/about"> About Us </a>    
     </div>
   </div>
 </div>

@@ -10,11 +10,10 @@
 				<p>Member since <%= @user.created_at.strftime("%D") %></p>
 				<br>
 				<p>Currently donating <span class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></span> per month</p>
+			<% @user.donations.each do |d| %>
+				<p id="next_donations">Next donation: $<%= d.monthly_amount %> on <%= (d.created_at + 1.month).strftime("%D") %></p>
+			<% end %>
 				<br>
-				<% @user.donations.each do |d| %>
-					<p>Next donation: $<%= d.monthly_amount %> on <%= (d.created_at + 1.month).strftime("%D") %></p>
-				<% end %>
-				<p>Next Donation December 8, 2015</p>
 			</div>
 			<div class="col-lg-3 text-center">
 				<h1 class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.amount} + @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></h1>
@@ -31,6 +30,7 @@
 			<div class="text-center">
 				<h3 class="profile_title">News Feed</h3>
 			</div>
+						<% @user.donations.each do |d| %>
 			<div class="row">
 				<div class="col-md-5"><%= image_tag src="red.jpg", :class=>"red" %>
 				</div>
@@ -38,52 +38,22 @@
 				<p>This post was written in September 2015 by Niki Clark, a member of the American Red Cross’s international communications team who was deployed to Nepal following the 7.8 magnitude earthquake that struck the country in April. I am boarding a plane to Tacloban—a city on the island of Leyte, in the Philippines. </p>
 				</div>				
 			</div>
+			<% end %>
 		</div>
 		<div class="col-lg-6">
 			<div class="row">
 				<div class="text-center">
 					<h3 class="profile_title">Your Charities</h3>
 				</div>
+					<% @user.donations.reverse.each do |d| %>
 					<div class="charity-donated text-center">
 					<%= image_tag src="Red_cross.png", :class => "charity-img"%> <h2> American Red Cross</h2>
 					</div>
-				<div class="row text-center">
-<!-- 					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button> -->
-				</div>
+					<% end %>
+<!-- 				<div class="row text-center">
+					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button>
+				</div> -->
 			</div>
 		</div>
 	</div>
 </div>
-
-
-
-
-
-<!-- 	<div class="row">
-		<div class="col-lg-6">
-			<h2 class="profile_title">News Feed</h2>
-			<% @user.donations.each do |d| %>
-			<div class="panel panel-primary">
-				<div class="panel-heading">[Charity Name/Picture]</div>
-				<div class="panel-body">
-					<p>Meditation hoodie freegan, shoreditch pork belly listicle fanny pack pitchfork truffaut. Meggings shabby chic jean shorts, keffiyeh vinyl neutra cold-pressed blog. Gentrify cred sriracha vegan, banh mi chillwave single-origin coffee heirloom salvia pug godard roof party forage.<br><br>Synth tofu craft beer, gentrify gluten-free direct trade helvetica. Locavore mustache PBR&B lo-fi photo booth, health goth venmo. Locavore quinoa tofu, typewriter trust fund DIY YOLO. Drinking vinegar literally disrupt, lomo lumbersexual craft beer lo-fi meh heirloom pickled tousled vegan etsy distillery retro.</p>
-				</div>
-			</div>
-			<% end %>
-		</div>
-		<div class="col-lg-6">
-			<h2 class="profile_title">Your Donations</h2>
-			<% @user.donations.reverse.each do |d| %>
-				<div class="panel panel-success">
-					<div class="panel-heading">[Charity Name/Picture]</div>
-					<div class="panel-body">
-						<p><%= d.created_at.strftime("%D") %> at <%= d.created_at.strftime("%H:%m") %>, you donated:</p>
-						<ul>
-							<li>$<%= d.monthly_amount %> per month</li>
-							<li>$<%= d.amount %> one-time</li>
-						</ul>
-					</div>
-				</div>
-			<% end %>
-		</div>
-	</div> -->

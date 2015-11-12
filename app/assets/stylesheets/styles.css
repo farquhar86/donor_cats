@@ -24,6 +24,7 @@ h1.green {
 .profile_title {
 	color: gray;
 	margin-bottom: 50px;
+	margin-top: 50px;
 
 }
 
@@ -53,7 +54,11 @@ h1.green {
 	background-color: orange;
 }
 
-#profile_charities li {
+#next_donations {
+	padding-top: 20px;
+}
+
+#next_donations li {
 	display: inline;
 	padding-right: 100px;
 }

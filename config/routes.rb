@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 	root 'welcome#index'
 
+	get "/usertest", to: "welcome#usertesting"
+
 	get "/about", to: "welcome#show", as: :about
 
 	resources :users, only: [:create]

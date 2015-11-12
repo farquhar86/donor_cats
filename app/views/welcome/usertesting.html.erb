@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><%= image_tag("logo.png", :alt => "Joey", :class => "navbar_image") %></a>
+    </div>
+    <a class="navbar-brand" id="navbar_title" href="/">KarmaRoo</a>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to "Charities", charities_path%></li>
+        <li><%= link_to "About", about_path%></li>
+      </ul>
+      </ul>
+    </div>      
+  </div>
+</nav><div class="top-rectangle">
+  <div class="container">
+    <h1 class="main-page-header"> Make an impact on causes that matter to you.</h1>
+    <div class="row youtube">
+      <div class="col-md-8">
+        <iframe width="650" height="375" src="https://www.youtube.com/embed/h59e9Ol0V5U" frameborder="0" allowfullscreen></iframe> 
+        </div>
+        <div class="col-md-4 text-right">
+          <p> Donate to charities you care about and track the impact of every dollar.</p>
+          <form>
+            <input class="input-text" type="text" name="fname" placeholder="Email"><br>
+          </form>
+          <%= link_to "Send more Infomation!", "/usertest", class: "btn btn-primary" %><br>
+          <a> or become a participating charity</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mid-rectangle">
+  <div class="container">
+    <div class="row padding-bottom" >
+      <div class="col-md-4 big">
+        <h3 class="how_it_works"> How It Works</h3>
+        <ul>
+          <li>Choose your charity</li>
+          <li>Select your tax-deductible donation</li>
+          <li>See your impact</li>
+          <li>Review your donations all in one place</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div class="small">
+          <h1>$1309</h1> <p>given this week</p>
+        </div>
+        <div class="medium">
+          <h4>Updates</h4>
+          <p> Tato’s Tiger Sanctuary just rescued another tiger from poachers >> </p>
+        </div>
+      </div>
+      <div class="col-md-4 big">
+        <p>“We were able to get clean water to 78 people in a small village thanks to the donations from Karmaroo”</p>
+        <%= image_tag "customer01.jpg", :class => "img-cirlce" %>
+        <p class="pull-bot">Joan Shmoe <br><small>Clean Water Charity<small></p>
+      </div>
+    </div>
+    <div class="bottom-links">
+      <a href="/charities"> Charities </a>
+      <a href="/about"> About Us </a>    
+    </div>
+  </div>
+</div>
+<footer>@2015 KarmaRoo</footer>

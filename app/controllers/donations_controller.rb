@@ -4,6 +4,9 @@ class DonationsController < ApplicationController
     @charity = Charity.find_by({id: params[:id]})
 
   end
+  def show
+    
+  end 
 
   	
 

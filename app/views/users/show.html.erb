@@ -11,10 +11,6 @@
 				<br>
 				<p>Currently donating <span class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></span> per month</p>
 				<br>
-				<% @user.donations.each do |d| %>
-					<p>Next donation: $<%= d.monthly_amount %> on <%= (d.created_at + 1.month).strftime("%D") %></p>
-				<% end %>
-				<p>Next Donation December 8, 2015</p>
 			</div>
 			<div class="col-lg-3 text-center">
 				<h1 class="green">$<%= @user.donations.inject(0) {|sum, d| sum + d.amount} + @user.donations.inject(0) {|sum, d| sum + d.monthly_amount} %></h1>
@@ -24,12 +20,25 @@
 			</div>			
 		</div>
 	</div>
+	<div class="row text-center">
+		<ul id="next_donations">
+			<% @user.donations.each do |d| %>
+				<li>Next donation: $<%= d.monthly_amount %> on <%= (d.created_at + 1.month).strftime("%D") %></li>
+			<% end %>
+		</ul>
+	</div>
 </div>
+
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6">
 			<div class="text-center">
 				<h3 class="profile_title">News Feed</h3>
+			</div>
+			<div class="row">
+				<div class="charity-donated text-center">
+					<%= image_tag src="Red_cross.png", :class => "charity-img"%> <h2> American Red Cross</h2>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-5"><%= image_tag src="red.jpg", :class=>"red" %>
@@ -40,17 +49,21 @@
 			</div>
 		</div>
 		<div class="col-lg-6">
-			<div class="row">
-				<div class="text-center">
-					<h3 class="profile_title">Your Charities</h3>
-				</div>
-					<div class="charity-donated text-center">
-					<%= image_tag src="Red_cross.png", :class => "charity-img"%> <h2> American Red Cross</h2>
-					</div>
-<!-- 				<div class="row text-center">
-					<button class="btn-primary find-charity-btn"><a href="/charities">Donate <br><small>to new charity</small></a></button>
-				</div> -->
+			<div class="text-center">
+				<h3 class="profile_title">Your Donations</h3>
 			</div>
+			<% @user.donations.reverse.each do |d| %>
+				<div class="panel panel-success">
+					<div class="panel-heading">[Charity Name/Picture]</div>
+					<div class="panel-body">
+						<p><%= d.created_at.strftime("%D") %> at <%= d.created_at.strftime("%H:%m") %>, you donated:</p>
+						<ul>
+							<li>$<%= d.monthly_amount %> per month</li>
+							<li>$<%= d.amount %> one-time</li>
+						</ul>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>

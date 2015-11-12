@@ -31,8 +31,8 @@
 			<h3>Your selected charities</h3>
 		</div>
 		<ul id="profile_charities">
-			<% @user.donations.each do |d| %>
-				<li>Name/Picture of Charity</li>
+			<% @user.donations.each do |c| %>
+				<li>Charity ID: <%= c.charity_id %> [name coming]</li>
 			<% end %>
 		</ul>
 	</div>

@@ -13,8 +13,6 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 
 			<% if logged_in? %>
-				<!-- <a><%= link_to "Profile", profile_path, :method => :get %></a> -->
-
 				<a class="btn navbar-btn navbar-right btn-warning" href="/logout" id="logout_button">Log out</a>
 				<p class="navbar-text navbar-right"><%= link_to "Profile", profile_path, :method => :get %></p>
 				<p class="navbar-text navbar-right">Welcome, <%= current_user.first_name.capitalize %></p>
@@ -23,8 +21,8 @@
 				<a class="btn navbar-btn navbar-right btn-default" href="/login" id="login_button">Login</a>
 			<% end %>
 			<ul class="nav navbar-nav pull-right">
-				<li><a href="#">Charties</a></li>
-				<li><a href="#">About</a></li>
+				<li><%= link_to "Charities", charities_path %></li>
+				<li><%= link_to "About", about_path %></li>
 			</ul>
 		</div>			
 	</div>

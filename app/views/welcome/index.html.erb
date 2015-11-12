@@ -1,69 +1,52 @@
 <%= render "layouts/navbar" %>
-
-<!-- Page Content -->
-<div class="container">
-
-    <!-- Portfolio Item Heading -->
-  
-    <!-- /.row -->
-
-    <!-- Portfolio Item Row -->
-    <div class="row">
-
-        <div class="col-md-8">
-        	<iframe width="600" height="400" src="https://www.youtube.com/embed/-Y1A-wTOJH8" frameborder="0" allowfullscreen></iframe>
+<div class="top-rectangle">
+  <div class="container">
+    <h1 class="main-page-header"> Make an impact on causes that matter to you.</h1>
+    <div class="row youtube">
+      <div class="col-md-8">
+        <iframe width="550" height="350" src="https://www.youtube.com/embed/h59e9Ol0V5U" frameborder="0" allowfullscreen></iframe> 
         </div>
-
-        <div class="col-md-4 center">
-            <h3>KarmaRoo: A pouch for all your donations</h3>
-            <br>
-            <p>Donate to charities you care about, and track the impact on every dollar</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <%= button_to "View Charties", charities_path, class: "btn btn-default btn-lg", :method => :get %>
-         
-            <p>or become a participating charity</p>
-            <hr>
+        <div class="col-md-4 text-right">
+          <p> Donate to charities you care about and track the impact of every dollar.</p>
+          <button class="btn btn-primary">View Charities</button><br>
+          <a href="#"> or become a participating charity </a>
         </div>
-
+      </div>
     </div>
-    <!-- /.row -->
-
-    <!-- Related Projects Row -->
-    <div class="row space">
-
-   
-        <div class="col-sm-4 col-xs-6">
-                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                <h4 class= "center">Choose what causes and charities matter to you.</h4>
-        </div>
-
-        <div class="col-sm-4 col-xs-6">
-                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                <h4 class= "center">Select your tax-deductible recurring or one-time donation</h4>
-        </div>
-
-        <div class="col-sm-4 col-xs-6">
-                <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                <h4 class= "center">See your dollars make an impact.</h4>
-        </div>
-
-
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2015</p>
-            </div>
-        </div>
-        <!-- /.row -->
-    </footer>
-
+  </div>
 </div>
+<div class="mid-rectangle">
+  <div class="container">
+    <div class="row padding-bottom" >
+      <div class="col-md-4 big">
+        <h3 class="how_it_works"> How It Works</h3>
+        <ul>
+          <li>Choose your charity</li>
+          <li>Select your tax-deductible donation</li>
+          <li>See your impact</li>
+          <li>Review your donations all in one place</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div class="small">
+          <h1>$1309</h1> <p>given this week</p>
+        </div>
+        <div class="medium">
+          <h4>Updates</h4>
+          <p> Tato’s Tiger Sanctuary just rescued another tiger from poachers >> </p>
+        </div>
+      </div>
+      <div class="col-md-4 big">
+        <p>“We were able to get clean water to 78 people in a small village thanks to the donations from Karmaroo”</p>
+        <%= image_tag "customer01.jpg", :class => "img-cirlce" %>
+        <p class="pull-bot">Joan Shmoe <br><small>Clean Water Charity<small></p>
+      </div>
+    </div>
+    <div class="bottom-links">
+    <a href="#"> Donate </a>
+    <a href="#"> Contact Us </a>
+    <a href="#"> About Us </a>    
+    </div>
+  </div>
+</div>
+<footer>@2015 KarmaRoo</footer>
